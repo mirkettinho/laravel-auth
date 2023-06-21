@@ -9,7 +9,11 @@
 
 </div> --}}
 <div class="scroll">
-
+  @if(session("deleted"))
+  <div class="alert alert-success" role="alert">
+    {{session("deleted")}}
+  </div>
+  @endif
 <table class="table">
   <thead>
     <tr>
@@ -34,9 +38,9 @@
       <td>{{$project->end_date}}</td>
       <td>
         <a class="bg-primary text-white" href="{{route("admin.projects.show", $project)}}"></i>show</a>
-        <a class="bg-warning" href="{{route("admin.projects.edit", $project)}}">edit</a>
+        <a class="bg-warning text-white" href="{{route("admin.projects.edit", $project)}}">edit</a>
 
-
+        @include('admin.partials.modal')
       </td>
     </tr>
     @endforeach
