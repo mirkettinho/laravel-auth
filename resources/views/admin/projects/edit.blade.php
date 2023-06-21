@@ -1,0 +1,68 @@
+@extends("layouts.app")
+
+
+
+
+@section("content")
+
+
+
+<form action="{{route("admin.projects.update", $project)}}" method="POST" class="scroll">
+  @csrf
+  @method("PUT")
+
+  @if ($errors->any())
+
+  <div class="alert alert-danger" role="alert">
+    <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{$error}}</li>
+      @endforeach
+    </ul>
+  </div>
+  @endif
+
+  <h1>Modifica di {{$project->title}} </h1>
+  {{-- 1 --}}
+  <div class="mb-3">
+    <label for="title" class="form-label">Titolo *</label>
+    <input
+    type="text"
+    class="form-control @error("title") is-invalid @enderror"
+    id="title"
+    name="title"
+    placeholder="inserisci il titolo"
+    value="{{old("title")}}"
+    >
+    @error("title") <p class="text-danger">{{$message}}</p> @enderror
+  </div>
+  {{-- 2 --}}
+  <div class="mb-3">
+    <label for="description" class="form-label">Descrizione</label>
+    <input type="text-area" class="form-control" id="description" name="description" placeholder="inserisci la descrizione"
+    value="{{old("description")}}"
+    >
+  </div>
+  {{-- 3 --}}
+  <div class="mb-3">
+    <label for="languages" class="form-label">Linguaggio</label>
+    <input type="text" class="form-control" id="languages" name="languages" placeholder="inserisci il linguaggio"
+    value="{{old("languages")}}"
+    >
+  </div>
+  {{-- 4 --}}
+  <div class="mb-3">
+    <label for="end_date" class="form-label">Data Consegna</label>
+    <input
+    type="text"
+    class="form-control"
+    id="end_date"
+    name="end_date"
+    placeholder="inserisci la data di consegna"
+    value="{{old("end_date")}}"
+    >
+  </div>
+
+  <button type="submit" class="btn btn-primary">Aggiungi Prodotto</button>
+</form>
+@endsection

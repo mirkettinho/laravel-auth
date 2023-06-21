@@ -33,8 +33,8 @@
       <td>{{$project->languages}}</td>
       <td>{{$project->end_date}}</td>
       <td>
-        <a class="bg-primary" href="{{route("admin.projects.show", $project)}}"><i class="fa-solid fa-eye text-white"></i></a>
-        <a class="bg-warning" href="{{route("admin.projects.edit", $project)}}"><i class="fa-solid fa-pen text-white"></i></a>
+        <a class="bg-primary text-white" href="{{route("admin.projects.show", $project)}}"></i>show</a>
+        <a class="bg-warning" href="{{route("admin.projects.edit", $project)}}">edit</a>
 
 
       </td>
