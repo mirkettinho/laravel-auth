@@ -45,8 +45,11 @@
                         <a class="nav-link" href="{{route("home") }}">Public Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Aggiungi Prodotto</a>
+                      <a class="nav-link" href="{{route("admin.projects.create")}}">Aggiungi Prodotto</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route("admin.projects.index")}}">lista progetti</a>
+                </li>
                   </ul>
                   @endauth
 
