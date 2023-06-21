@@ -1,0 +1,50 @@
+.box-bio{
+  // background-color: orange;
+  height: 500px;
+  padding-top: 120px;
+  width: calc(100% / 2);
+  z-index: 2;
+  .subtitle{
+    font-size: 25px;
+    font-weight: 500;
+    color: #6d7379;
+  }
+  .title{
+    font-size: 74px;
+    font-weight: 700;
+    color: #495057;
+  }
+  .icons{
+    padding-top: 20px;
+    .circle{
+          height: 45px;
+          width: 45px;
+          border-radius: 50%;
+          border: 2px solid #ff7a57;
+          cursor: pointer;
+          &:hover{
+            background-color: #ff7a57;
+          }
+          &:hover i{
+            color: white;
+          }
+      i{
+        font-size: 20px;
+        line-height: 45px;
+        color: #ff7a57;
+      }
+    }
+  }
+}
+.box-image{
+  // background-color: orange;
+  height: 815px;
+  position: absolute;
+  left: 600px;
+  img{
+    height: 100%;
+  }
+}
+
+
+

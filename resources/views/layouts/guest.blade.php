@@ -15,9 +15,14 @@
         @vite(['resources/scss/appGuest.scss', 'resources/js/appGuest.js'])
     </head>
     <body>
+      <div class="container-personal">
+        <header>
+          @include("guest.partials.header")
+        </header>
 
         <main>
-            @yield("content")
+          @yield("content")
         </main>
+      </div>
     </body>
 </html>

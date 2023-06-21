@@ -1,7 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-body{
-  background-color: rgb(8, 96, 126);
-  color: white;
+@import "./guest/partials/home";
+@import "./guest/partials/header";
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container-personal{
+  width: 90%;
+  margin: 0 auto;
 }
