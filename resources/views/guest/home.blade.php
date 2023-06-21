@@ -1,5 +1,9 @@
 @extends("layouts.guest")
 
+@section("title")
+  Home
+@endsection
+
 
 @section("content")
 
@@ -12,7 +16,7 @@
 
     <div class="icons d-flex ">
       <div class="circle text-center">
-        <a href="https://github.com/mirkettinho"><i class="fa-brands fa-github-alt"></i></a>
+        <a href="https://github.com/mirkettinho" target="blank"><i class="fa-brands fa-github-alt"></i></a>
       </div>
 
       <div class="circle text-center">
