@@ -7,7 +7,7 @@
 
 
 
-<form action="{{route("admin.projects.update", $project)}}" method="POST" class="scroll">
+<form action="{{route("admin.projects.update", $project)}}" method="POST"  class="scroll" enctype="multipart/form-data">
   @csrf
   @method("PUT")
 
@@ -43,6 +43,14 @@
     value="{{old("description")}}"
     >
   </div>
+
+  <div class="mb-3">
+    <label for="image" class="form-label">Immagine</label>
+    <input type="file" onchange="anteprima(event)"  class="form-control mb-4" id="image" name="image" placeholder="inserisci la descrizione"
+    value="{{old("image")}}"
+    >
+    <img width="500" id="prev-image" src="" alt="">
+  </div>
   {{-- 3 --}}
   <div class="mb-3">
     <label for="languages" class="form-label">Linguaggio</label>
@@ -65,4 +73,15 @@
 
   <button type="submit" class="btn btn-primary">Aggiungi Prodotto</button>
 </form>
+
+
+
+
+<script>
+  function anteprima(event){
+    const tagImage = document.getElementById("prev-image");
+    tagImage.src = URL.createObjectURL(event.target.files[0]);
+  }
+</script>
+
 @endsection

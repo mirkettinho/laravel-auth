@@ -44,7 +44,7 @@
   <div class="mb-3">
     <label for="image" class="form-label">Immagine</label>
     <input type="file" onchange="anteprima(event)"  class="form-control mb-4" id="image" name="image" placeholder="inserisci la descrizione"
-    value="{{old("description")}}"
+    value="{{old("image")}}"
     >
     <img width="500" id="prev-image" src="" alt="">
   </div>

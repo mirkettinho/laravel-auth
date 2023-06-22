@@ -93,6 +93,28 @@ class ProjectController extends Controller
     {
         $form_data = $request->all();
 
+        if($form_data['title'] !== $project->title ){
+
+          $form_data['slug'] = Project::generateSlug($form_data['title']);
+        }else{
+          $form_data['slug'] = $project->slug;
+        }
+
+        // verifico esistenza image
+        if(array_key_exists("image", $form_data)){
+
+          // se esiste, elimino quella vecchia
+          if($project->image_path){
+            Storage::disk("public")->delete($project->image_path);
+          }
+          // nome originale image
+          $form_data["image_original_name"] = $request->file("image")->getClientOriginalName();
+          // salvo image dentro uploads e salvo il percorso
+          $form_data["image_path"] = Storage::put("uploads", $form_data["image"]);
+        }
+
+
+
         $project->update($form_data);
 
         return redirect()->route("admin.projects.show", $project);
@@ -106,6 +128,12 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+
+      if($project->image_path){
+        Storage::disk("public")->delete($project->image_path);
+      }
+
+
       $project->delete();
 
       return redirect()->route("admin.projects.index")->with("deleted", "il progetto $project->title é stato eliminato con successo");
