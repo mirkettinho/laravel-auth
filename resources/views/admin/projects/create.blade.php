@@ -7,7 +7,7 @@
 
 
 
-<form action="{{route("admin.projects.store")}}" method="POST" class="scroll">
+<form action="{{route("admin.projects.store")}}" method="POST"  enctype="multipart/form-data" scroll>
   @csrf
 
   @if ($errors->any())
@@ -37,6 +37,13 @@
   <div class="mb-3">
     <label for="description" class="form-label">Descrizione</label>
     <input type="text-area" class="form-control" id="description" name="description" placeholder="inserisci la descrizione"
+    value="{{old("description")}}"
+    >
+  </div>
+
+  <div class="mb-3">
+    <label for="image" class="form-label">Immagine</label>
+    <input type="file" class="form-control" id="image" name="image" placeholder="inserisci la descrizione"
     value="{{old("description")}}"
     >
   </div>
