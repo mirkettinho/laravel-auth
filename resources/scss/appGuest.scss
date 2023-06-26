@@ -1,8 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-@import "./guest/partials/home";
 @import "./guest/partials/header";
+@import "./guest/partials/home";
+@import "./guest/partials/about";
+@import "./guest/partials/portfolio";
+
 
 
 *{

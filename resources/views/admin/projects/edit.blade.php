@@ -47,9 +47,9 @@
   <div class="mb-3">
     <label for="image" class="form-label">Immagine</label>
     <input type="file" onchange="anteprima(event)"  class="form-control mb-4" id="image" name="image" placeholder="inserisci la descrizione"
-    value="{{old("image")}}"
+    value="{{old("image", $project?->image_original_name)}}"
     >
-    <img width="500" id="prev-image" src="" alt="">
+    <img width="500" id="prev-image" src="{{$project?->image_path}}" alt="">
   </div>
   {{-- 3 --}}
   <div class="mb-3">

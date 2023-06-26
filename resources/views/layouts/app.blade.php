@@ -42,7 +42,7 @@
 
                   <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route("home") }}">Public Home</a>
+                        <a class="nav-link" target="blank" href="{{route("home") }}">Public Home</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="{{route("admin.projects.create")}}">Aggiungi Prodotto</a>
