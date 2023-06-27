@@ -1,6 +1,10 @@
 @extends("layouts.guest")
 
 
+@section("title")
+  Portfolio
+@endsection
+
 @section("content")
 
 <div class="d-flex flex-wrap ">
